@@ -1,10 +1,9 @@
-import logo from './logo.svg';
-import './App.css';
+import ContextModelList from "./components/ContextModelList";
 
 function App() {
   return (
     <div className="App">
-      
+      <ContextModelList />
     </div>
   );
 }
