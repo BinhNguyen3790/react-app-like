@@ -1,26 +1,28 @@
 import React, { Component } from "react";
 import ModelItem from "./ModelItem";
+import { ModalListContext } from "../context/ModalListContext";
 
 class ModelList extends Component {
   render() {
     return (
-      <div>
-        <h2>Danh Sách Idol:</h2>
-        <div class="row">
-          <div className="col-3">
-            <ModelItem />
-          </div>
-          <div className="col-3">
-            <ModelItem />
-          </div>
-          <div className="col-3">
-            <ModelItem />
-          </div>
-          <div className="col-3">
-            <ModelItem />
-          </div>
-        </div>
-      </div>
+      <ModalListContext.Consumer>
+        {(value) => {
+          return (
+            <div>
+              <h2>Danh Sách Idol:</h2>
+              <div class="row">
+                {value.ModelList.map((model, index) => {
+                  return (
+                    <div class="col-3" key={index}>
+                      <ModelItem modelItem={model} />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        }}
+      </ModalListContext.Consumer>
     );
   }
 }
