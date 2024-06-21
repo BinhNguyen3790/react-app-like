@@ -5,10 +5,12 @@ import ModelList from "./ModelList";
 class ContextModelList extends Component {
   render() {
     return (
-      <div className="container m-5">
-        <ModelProfile />
-        <ModelList />
-      </div>
+      <ModelList.Provider>
+        <div className="container m-5">
+          <ModelProfile />
+          <ModelList />
+        </div>
+      </ModelList.Provider>
     );
   }
 }
