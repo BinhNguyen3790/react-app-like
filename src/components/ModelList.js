@@ -10,10 +10,10 @@ class ModelList extends Component {
           return (
             <div>
               <h2>Danh Sách Idol:</h2>
-              <div class="row">
+              <div className="row">
                 {value.ModelList.map((model, index) => {
                   return (
-                    <div class="col-3" key={index}>
+                    <div className="col-3" key={index}>
                       <ModelItem modelItem={model} />
                     </div>
                   );
